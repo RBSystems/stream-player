@@ -1,0 +1,32 @@
+{
+  "streams": [
+    {
+      "name": "Stream 1",
+      "address": "stream1.address"
+    },
+    {
+      "name": "Stream 2",
+      "address": "stream2.address"
+    },
+    {
+      "name": "Stream 3",
+      "address": "stream3.address"
+    },
+    {
+      "name": "Stream 4",
+      "address": "stream4.address"
+    },
+    {
+      "name": "Stream 5",
+      "address": "stream5.address"
+    },
+    {
+      "name": "Stream 6",
+      "address": "stream6.address"
+    },
+    {
+      "name": "Stream 7",
+      "address": "stream7.address"
+    }
+  ]
+}
