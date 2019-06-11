@@ -13,7 +13,7 @@ type Stream struct {
 
 func GetStreams(ctx echo.Context) error {
 
-	streams := [4]Stream{
+	streams := [2]Stream{
 		{
 			Name:    "Stream1",
 			Address: "http://10.11.17.43:1935/overflow/Office_Camera.stream/playlist.m3u8",
