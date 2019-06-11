@@ -1,10 +1,16 @@
-import { Deserializable } from "./deserializable.model";
+import { Deserializable } from './deserializable.model';
+import {
+  JsonObject,
+  JsonProperty,
+  JsonCustomConvert,
+  JsonConverter
+} from 'json2typescript';
 
-export class Stream implements Deserializable {
-  name: string;
-  address: string;
+@JsonObject('Stream')
+export class Stream {
+  @JsonProperty('name', String, true)
+  name: string = undefined;
 
-  deserialize(input: any): this {
-    return Object.assign(this, input);
-  }
+  @JsonProperty('address', String, true)
+  address: string = undefined;
 }
