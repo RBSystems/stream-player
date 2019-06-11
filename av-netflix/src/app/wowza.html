@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://player.wowza.com/player/latest/wowzaplayer.min.js"></script>
+		<script type="text/javascript">
+			this.currURL = "https%3A%2F%2Fturtle1.byu.edu%3A8443%2Foverflow%2FOffice_Camera.stream%2Fplaylist.m3u8";
+			this.URLIndex = 0;
+			function cycleStream(){
+				this.URLIndex = (this.URLIndex + 1) % 3;
+				if (this.URLIndex == 0){
+					this.currURL = "https%3A%2F%2Fturtle1.byu.edu%3A8443%2Foverflow%2FOffice_Camera.stream%2Fplaylist.m3u8";
+				}
+				else if (this.URLIndex == 1){
+					this.currURL = "https%3A%2F%2Fturtle1.byu.edu%3A8443%2Foverflow%2Fteradeck_unicast.stream%2Fplaylist.m3u8";
+				}
+				else if (this.URLIndex == 2){
+					this.currURL = "https%3A%2F%2Fturtle1.byu.edu%3A8443%2Foverflow%2F1108_Encoder.stream%2Fplaylist.m3u8";
+				}
+				console.log(this.currURL);
+			}
+			function reload(){
+				cycleStream();
+				WowzaPlayer.create('playerElement',
+				{
+					"license":"PLAY1-aVtUF-HfXt6-EVa8K-u3v3Q-8ZKEN",
+					"title":"BLAH",
+					"description":"BLAH",
+					"sourceURL":this.currURL,
+					"autoPlay":false ,
+					"volume":"75",
+					"mute":false,
+					"loop":false,
+					"audioOnly":false,
+					"uiShowQuickRewind":true,
+					"uiQuickRewindSeconds":"30"
+				}
+				);
+				console.log("Refreshed");
+			}
+		</script>
+	
+	</head>
+	<body>
+		<div id="playerWrapper">
+			<div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div>
+			<script type="text/javascript">
+				WowzaPlayer.create('playerElement',
+				{
+					"license":"PLAY1-aVtUF-HfXt6-EVa8K-u3v3Q-8ZKEN",
+					"title":"BLAH",
+					"description":"BLAH",
+					"sourceURL":this.currURL,
+					"autoPlay":false,
+					"volume":"75",
+					"mute":false,
+					"loop":false,
+					"audioOnly":false,
+					"uiShowQuickRewind":true,
+					"uiQuickRewindSeconds":"30"
+				}
+				);
+				console.log("Hello", this.currURL);
+			</script>
+	</div>
+	 <div>
+		<button onclick="reload()">Cycle Stream</button>
+	</div>
+	
+	</body>
+</html>

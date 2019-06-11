@@ -1,6 +1,7 @@
 <div class="stream-list-container">
   <app-stream-card
-    *ngFor="let streamInfo of streamList"
+    *ngFor="let streamInfo of streamList; let i = index"
     [streamInfo]="streamInfo"
+      [playerID]="i"
   ></app-stream-card>
 </div>

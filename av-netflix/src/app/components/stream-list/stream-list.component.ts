@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { StreamListService } from "src/app/services/stream-list.service";
-import { Stream } from "src/app/models/stream.model";
+import { StreamListService } from 'src/app/services/stream-list.service';
+import { Stream } from 'src/app/models/stream.model';
 
 @Component({
-  selector: "app-stream-list",
-  templateUrl: "./stream-list.component.html",
-  styleUrls: ["./stream-list.component.scss"]
+  selector: 'app-stream-list',
+  templateUrl: './stream-list.component.html',
+  styleUrls: ['./stream-list.component.scss']
 })
 export class StreamListComponent implements OnInit {
   streamList: Stream[];

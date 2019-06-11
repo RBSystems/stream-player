@@ -1,32 +1,20 @@
 {
-  "streams": [
-    {
-      "name": "Stream 1",
-      "address": "stream1.address"
-    },
-    {
-      "name": "Stream 2",
-      "address": "stream2.address"
-    },
-    {
-      "name": "Stream 3",
-      "address": "stream3.address"
-    },
-    {
-      "name": "Stream 4",
-      "address": "stream4.address"
-    },
-    {
-      "name": "Stream 5",
-      "address": "stream5.address"
-    },
-    {
-      "name": "Stream 6",
-      "address": "stream6.address"
-    },
-    {
-      "name": "Stream 7",
-      "address": "stream7.address"
-    }
-  ]
+    "streams": [
+        {
+            "name": "The Cube",
+            "address": "https://turtle1.byu.edu:8443/overflow/Office_Camera.stream/playlist.m3u8"
+        },
+        {
+            "name": "1108 Encoder",
+            "address": "https%3A%2F%2Fturtle1.byu.edu%3A8443%2Foverflow%2F1108_Encoder.stream%2Fplaylist.m3u8"          
+        },
+        {
+            "name": "1108 Camera 1",
+            "address": "https://turtle1.byu.edu:8443/overflow/itb1108cam1.stream/playlist.m3u8"
+        },
+{
+            "name": "1108 Camera 2",
+            "address": "https://turtle1.byu.edu:8443/overflow/itb1108cam2.stream/playlist.m3u8"
+        }
+    ]
 }

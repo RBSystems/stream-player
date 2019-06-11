@@ -4,7 +4,7 @@
       <mat-card-title>{{ streamInfo.name }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ streamInfo.address }}</p>
+        <app-player [currURL]="streamInfo.address" [playerID]="playerID"></app-player>
     </mat-card-content>
   </mat-card>
 </div>
