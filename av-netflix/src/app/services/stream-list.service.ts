@@ -20,7 +20,7 @@ export class StreamListService {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     });
-    const data: any = this.http.get('localhost:10001/streams', { headers : h });
+    const data: any = this.http.get('localhost:10001/streams', { headers: h });
     this.streams = converter.deserializeArray(data, Stream);
   }
 

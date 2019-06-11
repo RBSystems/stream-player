@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/byuoitav/common/v2/auth"
+	"github.com/byuoitav/stream-player/handlers"
 	"github.com/labstack/echo"
 )
 
@@ -12,6 +13,8 @@ func main() {
 
 	router := echo.New()
 	router.Use(echo.WrapMiddleware(auth.AuthenticateCASUser))
+
+	router.GET("/streams", handlers.GetStreams)
 
 	router.Static("/", "av-netflix-dist")
 
