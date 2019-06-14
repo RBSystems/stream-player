@@ -1,9 +1,17 @@
+import {
+    JsonObject,
+    JsonProperty,
+    JsonCustomConvert,
+    JsonConverter
+} from 'json2typescript';
 import { Stream } from './stream.model';
 
+@JsonObject('StreamContainer')
 export class StreamContainer {
-  streams: Stream[];
+    @JsonProperty('list', [Stream], true)
+    list: Stream[] = undefined;
 
-  getAllStreams(): Stream[] {
-    return this.streams;
-  }
+    getStreams(): Stream[] {
+        return this.list;
+    }
 }

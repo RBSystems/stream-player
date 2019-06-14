@@ -11,9 +11,13 @@ type Stream struct {
 	Address string `json:"address"`
 }
 
+type StreamContainer struct {
+	List []Stream
+}
+
 func GetStreams(ctx echo.Context) error {
 
-	streams := [2]Stream{
+	streams := []Stream{
 		{
 			Name:    "Stream1",
 			Address: "http://10.11.17.43:1935/overflow/Office_Camera.stream/playlist.m3u8",
@@ -32,5 +36,7 @@ func GetStreams(ctx echo.Context) error {
 		// },
 	}
 
-	return ctx.JSON(http.StatusOK, streams)
+	streamContainer := &StreamContainer{streams}
+
+	return ctx.JSON(http.StatusOK, streamContainer)
 }

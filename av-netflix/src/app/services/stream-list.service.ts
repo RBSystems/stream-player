@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 
-import streamData from 'src/assets/streams.json';
-import { StreamContainer } from 'src/app/models/stream-container.model.js';
 import { Stream } from 'src/app/models/stream.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonConvert } from 'json2typescript';
+import { StreamContainer } from '../models/stream-container.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StreamListService {
-  streams: Stream[];
+  //streams: Stream[];
+  streams: StreamContainer;
 
   constructor(private http: HttpClient) {
     const converter = new JsonConvert();
@@ -21,10 +21,15 @@ export class StreamListService {
       'Access-Control-Allow-Origin': '*'
     });
     const data: any = this.http.get('localhost:10001/streams', { headers: h });
-    this.streams = converter.deserializeArray(data, Stream);
+    // this.streams = converter.deserializeArray(data, Stream);
+    this.streams = converter.deserializeObject(data, StreamContainer);
   }
 
   getStreamList(): Stream[] {
-    return this.streams;
+    return this.streams.getStreams();
   }
+
+  // getStreamList(): Stream[] {
+  //   return this.streams;
+  // }
 }
