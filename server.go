@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/byuoitav/common/log"
 	"github.com/byuoitav/common/v2/auth"
 	"github.com/byuoitav/stream-player/handlers"
 	"github.com/labstack/echo"
@@ -14,7 +15,10 @@ func main() {
 	router := echo.New()
 	router.Use(echo.WrapMiddleware(auth.AuthenticateCASUser))
 
+	log.SetLevel("debug")
+
 	router.GET("/streams", handlers.GetStreams)
+	router.GET("/licensekey", handlers.GetLicenseKey)
 
 	router.Static("/", "av-netflix-dist")
 

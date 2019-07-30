@@ -1,0 +1,14 @@
+{
+    "/streams": {
+        "target": "http://localhost:10001",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/licensekey": {
+        "target": "http://localhost:10001",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

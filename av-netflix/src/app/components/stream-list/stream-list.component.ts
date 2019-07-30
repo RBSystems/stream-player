@@ -9,11 +9,14 @@ import { Stream } from 'src/app/models/stream.model';
   styleUrls: ['./stream-list.component.scss']
 })
 export class StreamListComponent implements OnInit {
-  streamList: Stream[];
+  streamList: Stream[] = [];
 
   constructor(private listService: StreamListService) {}
 
   ngOnInit() {
-    this.streamList = this.listService.getStreamList();
+    this.listService.getStreamList().then((list) => {
+      console.log(list);
+      this.streamList = list;
+    });
   }
 }
