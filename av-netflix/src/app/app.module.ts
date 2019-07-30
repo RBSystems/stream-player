@@ -25,6 +25,7 @@ import { PlayerComponent } from './components/player/player.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
@@ -39,4 +40,4 @@ import { PlayerComponent } from './components/player/player.component';
   bootstrap: [AppComponent],
   entryComponents: [StreamCardComponent]
 })
-export class AppModule {}
+export class AppModule { }
