@@ -6,14 +6,21 @@ import (
 	"github.com/labstack/echo"
 )
 
+// StreamContainer contains the streams
+type StreamContainer struct {
+	Streams []Stream `json:"stream"`
+}
+
+// Stream Struct
 type Stream struct {
 	Name    string `json:"name"`
 	Address string `json:"address"`
 }
 
+// GetStreams returns the array of all streams
 func GetStreams(ctx echo.Context) error {
-
-	streams := [2]Stream{
+	var streamContainer StreamContainer
+	streamContainer.Streams = []Stream{
 		{
 			Name:    "Stream1",
 			Address: "http://10.11.17.43:1935/overflow/Office_Camera.stream/playlist.m3u8",
@@ -32,5 +39,5 @@ func GetStreams(ctx echo.Context) error {
 		// },
 	}
 
-	return ctx.JSON(http.StatusOK, streams)
+	return ctx.JSON(http.StatusOK, streamContainer)
 }

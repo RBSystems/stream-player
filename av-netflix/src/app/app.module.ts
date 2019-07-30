@@ -15,6 +15,7 @@ import {
   MatGridListModule
 } from '@angular/material';
 
+import { HttpClientModule} from '@angular/common/http';
 import { StreamCardComponent } from './components/stream-card/stream-card.component';
 import { StreamListComponent } from './components/stream-list/stream-list.component';
 import { PlayerComponent } from './components/player/player.component';
@@ -31,7 +32,8 @@ import { PlayerComponent } from './components/player/player.component';
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,7 +10,7 @@ import { JsonConvert } from 'json2typescript';
   providedIn: 'root'
 })
 export class StreamListService {
-  streams: Stream[];
+  streamContainer: StreamContainer;
 
   constructor(private http: HttpClient) {
     const converter = new JsonConvert();
@@ -20,11 +20,17 @@ export class StreamListService {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     });
-    const data: any = this.http.get('localhost:10001/streams', { headers: h });
-    this.streams = converter.deserializeArray(data, Stream);
+    try {
+      const data: any = this.http.get('localhost:10001/streams', { headers: h });
+      this.streamContainer = converter.deserializeObject(data, StreamContainer);
+      console.log('Container:', this.streamContainer);
+      console.log('Streams:', this.streamContainer.getAllStreams());
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   getStreamList(): Stream[] {
-    return this.streams;
+    return this.streamContainer.getAllStreams();
   }
 }

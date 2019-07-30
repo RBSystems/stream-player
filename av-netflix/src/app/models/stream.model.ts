@@ -1,4 +1,3 @@
-import { Deserializable } from './deserializable.model';
 import {
   JsonObject,
   JsonProperty,
