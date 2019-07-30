@@ -30,10 +30,10 @@ func GetStreams(ctx echo.Context) error {
 			Name:    "Stream2",
 			Address: "http://10.11.17.43:1935/overflow/1108_Encoder.stream/playlist.m3u8",
 		},
-		// {
-		// 	Name:    "Stream3",
-		// 	Address: "stream3.address",
-		// },
+		{
+			Name:    "Stream3",
+			Address: "udp://@239.226.255.23:30120",
+		},
 		// {
 		// 	Name:    "Stream4",
 		// 	Address: "stream4.address",
