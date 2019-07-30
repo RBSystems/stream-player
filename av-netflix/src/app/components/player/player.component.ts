@@ -22,21 +22,21 @@ export class PlayerComponent implements OnInit {
     this.sl.getLicenseKey().then((key) => {
       k = key as string;
       console.log('k is', k);
+      this.player = WowzaPlayer.create(('player' + this.playerID),
+        {
+          license: k,
+          title: '',
+          description: '',
+          sourceURL: this.streamURL,
+          autoPlay: false,
+          volume: '75',
+          mute: false,
+          loop: false,
+          audioOnly: false,
+          uiShowQuickRewind: true,
+          uiQuickRewindSeconds: '30'
+        }
+      );
     });
-    this.player = WowzaPlayer.create(('player' + this.playerID),
-      {
-        license: k,
-        title: '',
-        description: '',
-        sourceURL: this.streamURL,
-        autoPlay: false,
-        volume: '75',
-        mute: false,
-        loop: false,
-        audioOnly: false,
-        uiShowQuickRewind: true,
-        uiQuickRewindSeconds: '30'
-      }
-    );
   }
 }
