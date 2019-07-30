@@ -32,12 +32,12 @@ func GetStreams(ctx echo.Context) error {
 		},
 		{
 			Name:    "Stream3",
-			Address: "udp://@239.226.255.23:30120",
+			Address: "http://turtle1.byu.edu:1935/overflow/itb1108cam1.stream/playlist.m3u8",
 		},
-		// {
-		// 	Name:    "Stream4",
-		// 	Address: "stream4.address",
-		// },
+		{
+			Name:    "Stream4",
+			Address: "http://turtle1.byu.edu:1935/overflow/itb1108cam2.stream/playlist.m3u8",
+		},
 	}
 
 	log.L.Debugf("Stream Container: %v", streamContainer)
