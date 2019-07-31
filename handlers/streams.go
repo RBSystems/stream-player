@@ -32,11 +32,11 @@ func GetStreams(ctx echo.Context) error {
 		},
 		{
 			Name:    "Stream 3",
-			Address: "http://turtle1.byu.edu:1935/overflow/1108_Encoder.stream/playlist.m3u8",
+			Address: "http://turtle1.byu.edu:1935/overflow/itb1108cam1.stream/playlist.m3u8",
 		},
 		{
 			Name:    "Stream 4",
-			Address: "http://turtle1.byu.edu:1935/overflow/Office_Camera.stream/playlist.m3u8",
+			Address: "http://turtle1.byu.edu:1935/overflow/itb1108cam2.stream/playlist.m3u8",
 		},
 	}
 
