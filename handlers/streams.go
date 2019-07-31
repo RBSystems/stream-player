@@ -23,21 +23,21 @@ func GetStreams(ctx echo.Context) error {
 	var streamContainer StreamContainer
 	streamContainer.Streams = []Stream{
 		{
-			Name:    "Stream1",
+			Name:    "Stream 1",
 			Address: "http://10.11.17.43:1935/overflow/Office_Camera.stream/playlist.m3u8",
 		},
 		{
-			Name:    "Stream2",
+			Name:    "Stream 2",
 			Address: "http://10.11.17.43:1935/overflow/1108_Encoder.stream/playlist.m3u8",
 		},
-		// {
-		// 	Name:    "Stream3",
-		// 	Address: "stream3.address",
-		// },
-		// {
-		// 	Name:    "Stream4",
-		// 	Address: "stream4.address",
-		// },
+		{
+			Name:    "Stream 3",
+			Address: "http://turtle1.byu.edu:1935/overflow/1108_Encoder.stream/playlist.m3u8",
+		},
+		{
+			Name:    "Stream 4",
+			Address: "http://turtle1.byu.edu:1935/overflow/Office_Camera.stream/playlist.m3u8",
+		},
 	}
 
 	log.L.Debugf("Stream Container: %v", streamContainer)
